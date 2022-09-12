@@ -1,0 +1,10 @@
+"use strict";
+exports.__esModule = true;
+var express_1 = require("express");
+var authRouter = (0, express_1.Router)();
+var schemaMiddleware_js_1 = require("../middlewares/schemaMiddleware.js");
+var userSchema_js_1 = require("../schemas/userSchema.js");
+var authController_js_1 = require("./../controllers/authController.js");
+authRouter.post("/signup", (0, schemaMiddleware_js_1.validateSchemaMiddleware)(userSchema_js_1.userSchema), authController_js_1.signUp);
+authRouter.post("/signin", (0, schemaMiddleware_js_1.validateSchemaMiddleware)(userSchema_js_1.userSchema), authController_js_1.signIn);
+exports["default"] = authRouter;

@@ -1,0 +1,14 @@
+"use strict";
+exports.__esModule = true;
+var express_1 = require("express");
+var cardController_js_1 = require("../controllers/cardController.js");
+var authMiddleware_js_1 = require("../middlewares/authMiddleware.js");
+var schemaMiddleware_js_1 = require("../middlewares/schemaMiddleware.js");
+var cardSchema_js_1 = require("../schemas/cardSchema.js");
+var cardRouter = (0, express_1.Router)();
+cardRouter.use(authMiddleware_js_1.ensureAuthenticatedMiddleware);
+cardRouter.get("/cards", cardController_js_1.getAllCards);
+cardRouter.get("/cards/:id", cardController_js_1.getCard);
+cardRouter.post("/cards", (0, schemaMiddleware_js_1.validateSchemaMiddleware)(cardSchema_js_1.cardSchema), cardController_js_1.createCard);
+cardRouter["delete"]("/cards/:id", cardController_js_1.deleteCard);
+exports["default"] = cardRouter;

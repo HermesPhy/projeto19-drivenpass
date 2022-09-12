@@ -1,0 +1,15 @@
+"use strict";
+exports.__esModule = true;
+var express_1 = require("express");
+var authRouter_js_1 = require("./authRouter.js");
+var credentialRouter_js_1 = require("./credentialRouter.js");
+var safeNoteRouter_js_1 = require("./safeNoteRouter.js");
+var cardRouter_js_1 = require("./cardRouter.js");
+var networkRouter_js_1 = require("./networkRouter.js");
+var router = (0, express_1.Router)();
+router.use(authRouter_js_1["default"]);
+router.use(credentialRouter_js_1["default"]);
+router.use(safeNoteRouter_js_1["default"]);
+router.use(cardRouter_js_1["default"]);
+router.use(networkRouter_js_1["default"]);
+exports["default"] = router;
