@@ -1,11 +1,11 @@
 import { User, Credential } from "@prisma/client";
-import * as credentialRepository from "../repositories/credentialRepository.js";
-import { decrypt, encrypt } from "../utils/criptrUtils.js";
+import * as credentialRepository from "../repositories/credentialRepository";
+import { decrypt, encrypt } from "../utils/criptrUtils";
 import {
   conflictError,
   notFoundError,
   unauthorizedError,
-} from "../utils/errorUtils.js";
+} from "../utils/errorUtils";
 
 export type CreateCredentialData = Omit<Credential, "id">;
 

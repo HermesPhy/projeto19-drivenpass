@@ -1,15 +1,15 @@
-import { User } from "@prisma/client";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import dotenv from "dotenv";
 dotenv.config({ path: ".env" });
 
-import * as userRepository from "../repositories/userRepository.js";
+import { User } from "@prisma/client";
+import * as userRepository from "../repositories/userRepository";
 import {
   conflictError,
   notFoundError,
   unauthorizedError,
-} from "../utils/errorUtils.js";
+} from "../utils/errorUtils";
 
 export type CreateUserData = Omit<User, "id">;
 

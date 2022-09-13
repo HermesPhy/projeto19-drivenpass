@@ -1,5 +1,5 @@
-import { CreateCredentialData } from "../services/credentialService.js";
-import { prisma } from "../config/database.js";
+import { prisma } from "../config/database";
+import { CreateCredentialData } from "../services/credentialService";
 
 export async function getAll(userId: number) {
   return prisma.credential.findMany({

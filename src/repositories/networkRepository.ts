@@ -1,5 +1,5 @@
-import { prisma } from "../config/database.js";
-import { CreateNetworkData } from "../services/networkService.js";
+import { prisma } from "../config/database";
+import { CreateNetworkData } from "../services/networkService";
 
 export async function getAll(userId: number) {
   return prisma.network.findMany({

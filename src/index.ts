@@ -1,11 +1,10 @@
 import express, { json } from "express";
 import "express-async-errors";
-
 import dotenv from "dotenv";
 dotenv.config({ path: ".env" });
 
-import router from "./routes/index.js";
-import handleErrorsMiddleware from "./middlewares/handleErrorsMiddleware.js";
+import router from "./routes/index";
+import handleErrorsMiddleware from "./middlewares/handleErrorsMiddleware";
 
 const app = express();
 app.use(json());

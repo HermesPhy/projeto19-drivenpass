@@ -1,6 +1,6 @@
 import { SafeNote, User } from "@prisma/client";
-import { conflictError, notFoundError } from "../utils/errorUtils.js";
-import * as safeNoteRepository from "./../repositories/safeNoteRepository.js";
+import { conflictError, notFoundError } from "../utils/errorUtils";
+import * as safeNoteRepository from "./../repositories/safeNoteRepository";
 
 export type CreateSafeNoteData = Omit<SafeNote, "id">;
 

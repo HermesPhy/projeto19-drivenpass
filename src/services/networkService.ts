@@ -1,8 +1,7 @@
 import { Network, User } from "@prisma/client";
-
-import * as networkRepository from "../repositories/networkRepository.js";
-import { decrypt, encrypt } from "../utils/criptrUtils.js";
-import { notFoundError } from "../utils/errorUtils.js";
+import * as networkRepository from "../repositories/networkRepository";
+import { decrypt, encrypt } from "../utils/criptrUtils";
+import { notFoundError } from "../utils/errorUtils";
 
 export type CreateNetworkData = Omit<Network, "id">;
 

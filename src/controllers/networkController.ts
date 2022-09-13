@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 
-import networkService from "../services/networkService.js";
+import networkService from "../services/networkService";
 
 export async function getAllNetworks(req: Request, res: Response) {
   const { user } = res.locals;

@@ -1,6 +1,7 @@
 import { Credential } from "@prisma/client";
 import { Request, Response } from "express";
-import credentialService from "../services/credentialService.js";
+
+import credentialService from "../services/credentialService";
 
 export async function getAllCredentials(req: Request, res: Response) {
   const { user } = res.locals;

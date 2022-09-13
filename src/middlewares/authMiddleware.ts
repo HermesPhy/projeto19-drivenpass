@@ -3,8 +3,8 @@ import jwt from "jsonwebtoken";
 import dotenv from "dotenv";
 dotenv.config();
 
-import userService from "../services/userService.js";
-import { unauthorizedError } from "../utils/errorUtils.js";
+import userService from "../services/userService";
+import { unauthorizedError } from "../utils/errorUtils";
 
 export async function ensureAuthenticatedMiddleware(
   req: Request,

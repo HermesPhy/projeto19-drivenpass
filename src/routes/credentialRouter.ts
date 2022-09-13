@@ -5,10 +5,10 @@ import {
   deleteCredential,
   getCredential,
   getAllCredentials,
-} from "../controllers/credentialController.js";
-import { ensureAuthenticatedMiddleware } from "../middlewares/authMiddleware.js";
-import { validateSchemaMiddleware } from "../middlewares/schemaMiddleware.js";
-import { credentialSchema } from "../schemas/credentialSchema.js";
+} from "../controllers/credentialController";
+import { ensureAuthenticatedMiddleware } from "../middlewares/authMiddleware";
+import { validateSchemaMiddleware } from "../middlewares/schemaMiddleware";
+import { credentialSchema } from "../schemas/credentialSchema";
 
 const credentialRouter = Router();
 

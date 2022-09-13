@@ -1,8 +1,7 @@
 import { User, Card } from "@prisma/client";
-
-import { decrypt, encrypt } from "../utils/criptrUtils.js";
-import { conflictError, notFoundError } from "../utils/errorUtils.js";
-import * as cardRepository from "./../repositories/cardRepository.js";
+import { decrypt, encrypt } from "../utils/criptrUtils";
+import { conflictError, notFoundError } from "../utils/errorUtils";
+import * as cardRepository from "./../repositories/cardRepository";
 
 export type CreateCardData = Omit<Card, "id">;
 

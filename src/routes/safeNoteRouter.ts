@@ -5,10 +5,10 @@ import {
   deleteSafeNote,
   getAllSafeNotes,
   getSafeNote,
-} from "../controllers/safeNoteController.js";
-import { ensureAuthenticatedMiddleware } from "../middlewares/authMiddleware.js";
-import { validateSchemaMiddleware } from "../middlewares/schemaMiddleware.js";
-import { safeNoteSchema } from "../schemas/safeNoteSchema.js";
+} from "../controllers/safeNoteController";
+import { ensureAuthenticatedMiddleware } from "../middlewares/authMiddleware";
+import { validateSchemaMiddleware } from "../middlewares/schemaMiddleware";
+import { safeNoteSchema } from "../schemas/safeNoteSchema";
 
 const safeNoteRouter = Router();
 

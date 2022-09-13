@@ -5,10 +5,10 @@ import {
   deleteNetwork,
   getAllNetworks,
   getNetwork,
-} from "../controllers/networkController.js";
-import { ensureAuthenticatedMiddleware } from "../middlewares/authMiddleware.js";
-import { validateSchemaMiddleware } from "../middlewares/schemaMiddleware.js";
-import { networkSchema } from "../schemas/networkSchema.js";
+} from "../controllers/networkController";
+import { ensureAuthenticatedMiddleware } from "../middlewares/authMiddleware";
+import { validateSchemaMiddleware } from "../middlewares/schemaMiddleware";
+import { networkSchema } from "../schemas/networkSchema";
 
 const networkRouter = Router();
 

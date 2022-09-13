@@ -1,5 +1,5 @@
-import { CreateSafeNoteData } from "../services/safeNoteService.js";
-import { prisma } from "./../config/database.js";
+import { prisma } from "./../config/database";
+import { CreateSafeNoteData } from "../services/safeNoteService";
 
 export async function getAll(userId: number) {
   return prisma.safeNote.findMany({

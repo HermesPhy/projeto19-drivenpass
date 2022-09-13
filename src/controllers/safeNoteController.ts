@@ -1,7 +1,7 @@
 //import { SafeNote } from "@prisma/client";
 import { Request, Response } from "express";
 
-import safeNoteService from "../services/safeNoteService.js";
+import safeNoteService from "../services/safeNoteService";
 
 export async function getAllSafeNotes(req: Request, res: Response) {
   const { user } = res.locals;

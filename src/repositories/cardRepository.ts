@@ -1,6 +1,5 @@
-import { prisma } from "../config/database.js";
-
-import { CreateCardData } from "../services/cardService.js";
+import { prisma } from "../config/database";
+import { CreateCardData } from "../services/cardService";
 
 export async function getAll(userId: number) {
   return prisma.card.findMany({

@@ -5,10 +5,10 @@ import {
   deleteCard,
   getAllCards,
   getCard,
-} from "../controllers/cardController.js";
-import { ensureAuthenticatedMiddleware } from "../middlewares/authMiddleware.js";
-import { validateSchemaMiddleware } from "../middlewares/schemaMiddleware.js";
-import { cardSchema } from "../schemas/cardSchema.js";
+} from "../controllers/cardController";
+import { ensureAuthenticatedMiddleware } from "../middlewares/authMiddleware";
+import { validateSchemaMiddleware } from "../middlewares/schemaMiddleware";
+import { cardSchema } from "../schemas/cardSchema";
 
 const cardRouter = Router();
 
