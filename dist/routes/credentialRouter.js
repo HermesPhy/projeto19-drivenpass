@@ -1,0 +1,14 @@
+"use strict";
+exports.__esModule = true;
+var express_1 = require("express");
+var credentialController_1 = require("../controllers/credentialController");
+var authMiddleware_1 = require("../middlewares/authMiddleware");
+var schemaMiddleware_1 = require("../middlewares/schemaMiddleware");
+var credentialSchema_1 = require("../schemas/credentialSchema");
+var credentialRouter = (0, express_1.Router)();
+credentialRouter.use(authMiddleware_1.ensureAuthenticatedMiddleware);
+credentialRouter.get("/credentials", credentialController_1.getAllCredentials);
+credentialRouter.get("/credentials/:id", credentialController_1.getCredential);
+credentialRouter.post("/credentials", (0, schemaMiddleware_1.validateSchemaMiddleware)(credentialSchema_1.credentialSchema), credentialController_1.createCredential);
+credentialRouter["delete"]("/credentials/:id", credentialController_1.deleteCredential);
+exports["default"] = credentialRouter;

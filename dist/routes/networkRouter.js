@@ -1,0 +1,14 @@
+"use strict";
+exports.__esModule = true;
+var express_1 = require("express");
+var networkController_1 = require("../controllers/networkController");
+var authMiddleware_1 = require("../middlewares/authMiddleware");
+var schemaMiddleware_1 = require("../middlewares/schemaMiddleware");
+var networkSchema_1 = require("../schemas/networkSchema");
+var networkRouter = (0, express_1.Router)();
+networkRouter.use(authMiddleware_1.ensureAuthenticatedMiddleware);
+networkRouter.get("/networks", networkController_1.getAllNetworks);
+networkRouter.get("/networks/:id", networkController_1.getNetwork);
+networkRouter.post("/networks", (0, schemaMiddleware_1.validateSchemaMiddleware)(networkSchema_1.networkSchema), networkController_1.createNetwork);
+networkRouter["delete"]("/networks/:id", networkController_1.deleteNetwork);
+exports["default"] = networkRouter;

@@ -1,0 +1,14 @@
+"use strict";
+exports.__esModule = true;
+var express_1 = require("express");
+var safeNoteController_1 = require("../controllers/safeNoteController");
+var authMiddleware_1 = require("../middlewares/authMiddleware");
+var schemaMiddleware_1 = require("../middlewares/schemaMiddleware");
+var safeNoteSchema_1 = require("../schemas/safeNoteSchema");
+var safeNoteRouter = (0, express_1.Router)();
+safeNoteRouter.use(authMiddleware_1.ensureAuthenticatedMiddleware);
+safeNoteRouter.get("/safenotes", safeNoteController_1.getAllSafeNotes);
+safeNoteRouter.get("/safenotes/:id", safeNoteController_1.getSafeNote);
+safeNoteRouter.post("/safenotes/", (0, schemaMiddleware_1.validateSchemaMiddleware)(safeNoteSchema_1.safeNoteSchema), safeNoteController_1.createSafeNote);
+safeNoteRouter["delete"]("/safenotes/:id", safeNoteController_1.deleteSafeNote);
+exports["default"] = safeNoteRouter;
