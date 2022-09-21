@@ -16,7 +16,7 @@ safeNoteRouter.use(ensureAuthenticatedMiddleware);
 safeNoteRouter.get("/safenotes", getAllSafeNotes);
 safeNoteRouter.get("/safenotes/:id", getSafeNote);
 safeNoteRouter.post(
-  "/safenotes/",
+  "/safenotes",
   validateSchemaMiddleware(safeNoteSchema),
   createSafeNote
 );

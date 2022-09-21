@@ -3,6 +3,7 @@ import { Request, Response } from "express";
 import userService from "../services/userService";
 
 export async function signUp(req: Request, res: Response) {
+  console.log("teste");
   const user = req.body;
   await userService.createUser(user);
   res.sendStatus(201);
